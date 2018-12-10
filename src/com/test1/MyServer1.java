@@ -33,6 +33,8 @@ public class MyServer1 {
                 PrintWriter pw = new PrintWriter(s.getOutputStream(), true);
                 pw.println("Hi, I'm a Server.");
 
+                isr.close();
+                pw.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

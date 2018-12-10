@@ -31,6 +31,10 @@ public class MyClient1 {
             BufferedReader br = new BufferedReader(isr);
             String response = br.readLine();
             System.out.println("Client: I have accepted => "+response);
+
+            pw.close();
+            isr.close();
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

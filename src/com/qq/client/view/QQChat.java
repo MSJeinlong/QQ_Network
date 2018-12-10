@@ -84,7 +84,6 @@ public class QQChat extends JFrame implements ActionListener {
                 ObjectOutputStream oos = new ObjectOutputStream
                         (ManageClientConServerThread.getClientConServerThread(ownerId).getS().getOutputStream());
                 oos.writeObject(m);
-                oos.writeObject(null);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

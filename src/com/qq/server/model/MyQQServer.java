@@ -21,6 +21,8 @@ public class MyQQServer extends Thread{
 
     private Socket s;
     private boolean stop = false;
+/*    private ObjectInputStream ois;
+    private ObjectOutputStream oos;*/
 
     public MyQQServer() {
 
@@ -71,7 +73,7 @@ public class MyQQServer extends Thread{
                     scct.start();
 
                     //并通知其他在线用户
-                    /*scct.notifyOther(u.getUserId());*/
+                    scct.notifyOther(u.getUserId());
                 } else {
                     m.setMesType("2");
                     oos.writeObject(m);

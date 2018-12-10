@@ -18,9 +18,12 @@ import java.net.Socket;
 public class QQClientConServer {
 
     public  Socket s;
+/*    private ObjectOutputStream oos;
+    private ObjectInputStream ois;*/
 
     public boolean SendInfoToServer(Object o){
         boolean b = false;
+
         try {
             s = new Socket("127.0.0.1", 9988);
             ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());

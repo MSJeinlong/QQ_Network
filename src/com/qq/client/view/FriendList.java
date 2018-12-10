@@ -35,10 +35,6 @@ public class FriendList extends JFrame implements ActionListener, MouseListener 
     private CardLayout c1;
 
 
-   /* public static void main(String[] args) {
-        new FriendList();
-    }*/
-
     public FriendList(String ownerId) {
         this.ownerId = ownerId;
         //处理第一张卡片，显示我的好友

@@ -5,7 +5,6 @@ import com.qq.client.common.MessageType;
 import com.qq.client.view.FriendList;
 import com.qq.client.view.QQChat;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
@@ -26,10 +25,9 @@ public class ClientConServerThread extends Thread {
     public void run() {
         while (true) {
             //不停的读取从服务器端发来的信息
-            ObjectInputStream ois = null;
             try {
                 if (!s.isClosed()) {
-                    ois = new ObjectInputStream(s.getInputStream());
+                    ObjectInputStream ois = new ObjectInputStream(s.getInputStream());
                     Message m = (Message) ois.readObject();
                     /*System.out.println("读取从服务器发来的消息" + m.getSender() + " 给 " + m.getGetter() + "发送：" + m.getCon());*/
 
@@ -56,15 +54,6 @@ public class ClientConServerThread extends Thread {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                break;
-            } finally {
-                try {
-                    if (ois != null) {
-                        ois.close();
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
